@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Paste a landing page URL, get a 9-point automated roast report — headline clarity, CTAs, social proof, mobile, trust signals, and more. Score out of 100.">
+  <title>Landing Page Roast — Automated Conversion Audit</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: system-ui, -apple-system, sans-serif; background: #0f0f0f; color: #f0f0f0; }
+
+    .hero { max-width: 680px; margin: 0 auto; padding: 80px 24px 60px; text-align: center; }
+    .eyebrow { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: #888; margin-bottom: 20px; }
+    h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; line-height: 1.1; margin-bottom: 20px; }
+    h1 span { color: #ff6b35; }
+    .sub { font-size: 1.15rem; color: #aaa; line-height: 1.6; margin-bottom: 40px; }
+    .cta-wrap { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+    .cta { display: inline-block; background: #ff6b35; color: #0f0f0f; font-weight: 700; font-size: 1rem;
+           padding: 14px 32px; border-radius: 8px; text-decoration: none; transition: opacity .15s; }
+    .cta:hover { opacity: .85; }
+    .price-note { font-size: .85rem; color: #666; }
+
+    .checks { max-width: 680px; margin: 0 auto; padding: 0 24px 60px; }
+    .checks h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 24px; text-align: center; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 10px; padding: 20px; }
+    .card .icon { font-size: 1.5rem; margin-bottom: 10px; }
+    .card h3 { font-size: .95rem; font-weight: 600; margin-bottom: 6px; }
+    .card p { font-size: .85rem; color: #888; line-height: 1.5; }
+
+    .howto { max-width: 680px; margin: 0 auto; padding: 0 24px 60px; }
+    .howto h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; text-align: center; }
+    .code-block { background: #111; border: 1px solid #2a2a2a; border-radius: 10px; padding: 20px 24px;
+                  font-family: 'Courier New', monospace; font-size: .88rem; color: #7fff6e;
+                  overflow-x: auto; margin-bottom: 16px; white-space: pre; }
+    .howto p { color: #aaa; font-size: .95rem; line-height: 1.6; margin-bottom: 12px; }
+    .howto a { color: #ff6b35; }
+
+    .example { max-width: 680px; margin: 0 auto; padding: 0 24px 60px; }
+    .example h2 { font-size: 1.5rem; font-weight: 700; margin-bottom: 20px; text-align: center; }
+    .example-output { background: #111; border: 1px solid #2a2a2a; border-radius: 10px; padding: 20px 24px;
+                      font-family: 'Courier New', monospace; font-size: .82rem; color: #ccc;
+                      overflow-x: auto; white-space: pre; line-height: 1.6; }
+    .example-output .pass { color: #7fff6e; }
+    .example-output .warn { color: #f0c040; }
+    .example-output .fail { color: #ff6b35; }
+
+    .pdf-cta { max-width: 480px; margin: 0 auto; padding: 0 24px 80px; text-align: center; }
+    .pdf-cta h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
+    .pdf-cta p { color: #888; font-size: .95rem; margin-bottom: 24px; line-height: 1.6; }
+
+    footer { text-align: center; padding: 24px; font-size: .8rem; color: #444; }
+    footer a { color: #555; }
+    @media (max-width: 480px) { .hero { padding: 60px 20px 40px; } }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <p class="eyebrow">Free tool &bull; Open source</p>
+  <h1>Your Landing Page,<br><span>Roasted</span></h1>
+  <p class="sub">
+    Paste any URL. Get an automated 9-point audit — headline clarity, CTAs, social proof,
+    mobile readiness, trust signals, and more. Score out of 100 with specific "fix this" callouts.
+    No login. No agency fluff.
+  </p>
+  <div class="cta-wrap">
+    <a href="https://gumroad.com/l/landing-page-roast" class="cta">Get the Full Roast Report — $12 &rarr;</a>
+    <span class="price-note">Or run the free script yourself &darr;</span>
+  </div>
+</section>
+
+<section class="checks">
+  <h2>What gets roasted</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="icon">H1</div>
+      <h3>Headline</h3>
+      <p>Is your H1 benefit-first or a company-name dump? We check framing, length, and count.</p>
+    </div>
+    <div class="card">
+      <div class="icon">CTA</div>
+      <h3>Call to Action</h3>
+      <p>How many CTAs? Any above the fold? Too many dilutes; zero is a disaster.</p>
+    </div>
+    <div class="card">
+      <div class="icon">KB</div>
+      <h3>Load Weight</h3>
+      <p>Page size in KB — a fast proxy for whether mobile visitors bounce before they read a word.</p>
+    </div>
+    <div class="card">
+      <div class="icon">★</div>
+      <h3>Social Proof</h3>
+      <p>Testimonials, logos, user counts, press mentions. We scan for all of them.</p>
+    </div>
+    <div class="card">
+      <div class="icon">[]</div>
+      <h3>Mobile</h3>
+      <p>Viewport meta tag — the minimum bar for not looking broken on a phone.</p>
+    </div>
+    <div class="card">
+      <div class="icon">--</div>
+      <h3>Trust Signals</h3>
+      <p>Privacy policy, contact info, refund guarantee. Missing these kills checkout conversions.</p>
+    </div>
+    <div class="card">
+      <div class="icon">Wc</div>
+      <h3>Word Count</h3>
+      <p>Under 150 words is too thin; over 3000 is a wall. We flag both extremes.</p>
+    </div>
+    <div class="card">
+      <div class="icon">Og</div>
+      <h3>Meta Description</h3>
+      <p>Your Google snippet — missing or too long means Google writes it for you, badly.</p>
+    </div>
+    <div class="card">
+      <div class="icon">Alt</div>
+      <h3>Image Alt Text</h3>
+      <p>Accessibility and SEO baseline. We count the images missing alt attributes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="howto">
+  <h2>Run it yourself — free</h2>
+  <div class="code-block">pip install requests beautifulsoup4
+python3 roast.py --url https://yoursite.com --output report.md</div>
+  <p>
+    Download <a href="https://github.com/YourManz/landing-page-roast">roast.py from GitHub</a>.
+    No API key. No account. Runs anywhere Python 3.9+ is installed.
+  </p>
+  <p>
+    The script is MIT-licensed. Fork it, extend it, add your own checks.
+    The $12 PDF version is for people who want a formatted, shareable report they can hand to a client or team.
+  </p>
+</section>
+
+<section class="example">
+  <h2>Example output — Stripe's landing page</h2>
+  <div class="example-output"><span class="pass"># Landing Page Roast Report
+
+URL: stripe.com
+Score: 79/100 — Grade B
+
+## Headline
+PASS — 14/15
+H1 found: "Financial infrastructure to grow your revenue"
+Benefit-framing detected. No filler opener. Clean.
+> Fix: Solid headline. No changes needed.
+
+## CTA
+PASS — 13/15
+3 CTAs found. "Start now" appears in first 30% of page — above fold.
+> Fix: CTAs look solid.
+
+## Load Weight
+WARN — 5/10
+Page HTML is 342 KB — acceptable but getting heavy.
+> Fix: Look for large inline scripts or base64 images to externalize.
+
+## Social Proof
+PASS — 15/15
+Signals found: customer logos, social numbers, press mentions.
+> Fix: Strong social proof coverage.
+
+## Trust Signals
+PASS — 11/15
+Present: privacy policy, terms link, contact info.
+Missing: refund/guarantee (expected for infra — not a real issue here).
+> Fix: Add a "99.99% uptime SLA" callout for enterprise buyers.</span></div>
+</section>
+
+<section class="pdf-cta">
+  <h2>Want a formatted PDF to share with your team?</h2>
+  <p>
+    The PDF version includes design annotations, a prioritized fix list, and a one-page summary
+    you can drop into a Notion page or hand to a developer. One-time purchase, no subscription.
+  </p>
+  <div class="cta-wrap">
+    <a href="https://gumroad.com/l/landing-page-roast" class="cta">Get the Full Roast Report — $12 &rarr;</a>
+    <span class="price-note">One-time. Instant download. 30-day money-back guarantee.</span>
+  </div>
+</section>
+
+<footer>
+  <p>
+    Built by <a href="https://github.com/YourManz">Kobe Neilson</a> &bull;
+    <a href="https://github.com/YourManz/landing-page-roast">GitHub</a> &bull;
+    MIT License
+  </p>
+</footer>
+
+</body>
+</html>
